@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+        <!-- for add new tab in Magento2 system configuration section -->
+        <tab id="Fayyaz" translate="label" sortOrder="10">
+             <label>Order Hook</label>
+        </tab>
+        <!-- for create section -->
+        
+        <section id="orderhook_enable" translate="label" type="text" sortOrder="320" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Enable Funcation</label>
+            <!-- Assign section to tab -->
+            <tab>Fayyaz</tab>
+            <resource>Fayyaz_OrderHookEnable::config</resource>
+            <!-- create group for fields in section -->
+            <group id="options" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Options</label>
+                
+                <field id="hook_status" translate="status"  type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Function</label>
+                    <source_model>Fayyaz\OrderHook\Model\Config\Source</source_model>
+                </field>
+                
+                
+            </group>
+        </section>
+        <section id="orderhook_decimal" translate="label" type="text" sortOrder="320" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Decimal Factor</label>
+            <!-- Assign section to tab -->
+            <tab>Fayyaz</tab>
+            <resource>Fayyaz_OrderHookDecimal::config</resource>
+            <!-- create group for fields in section -->
+            <group id="options" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                
+                <field id="decimal_factor" translate="decimal factor"  sortOrder="7" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Decimal Factor</label>
+                    <validate>validate-number required-entry</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
